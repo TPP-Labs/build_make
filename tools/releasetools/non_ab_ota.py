@@ -227,10 +227,10 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("------------------------------------------");
   script.Print("                                          ");
   script.Print("                                          ");
-  script.Print("              aosPB - Project             ");
+  script.Print("        The - Pixel - Project             ");
   script.Print("                                          ");
   script.Print("                                          ");
-  script.Print("   a homemade custom rom by @paperboy22   ");
+  script.Print("     a Pixel Experience Alternative!      ");
   script.Print("------------------------------------------");
   script.Print(" Android version: %s"%(android_version));
   script.Print(" Build id: %s"%(build_id));
