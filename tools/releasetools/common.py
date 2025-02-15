@@ -3478,10 +3478,10 @@ class BlockDifference(object):
     if not self.src:
       # write the output unconditionally
       script.Print(" ")
-      script.Print("Flashing aosPB %s partition..." % (self.partition,))
+      script.Print("Flashing tpp %s partition..." % (self.partition,))
     else:
       script.Print(" ")
-      script.Print("Flashing aosPB %s partition after verification." % (self.partition,))
+      script.Print("Flashing tpp %s partition after verification." % (self.partition,))
 
     if progress:
       script.ShowProgress(progress, 0)
@@ -3582,7 +3582,7 @@ class BlockDifference(object):
   def WritePostInstallVerifyScript(self, script):
     partition = self.partition
     script.Print(" ")
-    script.Print('Verifying aosPB %s files...' % (partition,))
+    script.Print('Verifying tpp %s files...' % (partition,))
     # Unlike pre-install verification, clobbered_blocks should not be ignored.
     ranges = self.tgt.care_map
     ranges_str = ranges.to_string_raw()
@@ -3600,7 +3600,7 @@ class BlockDifference(object):
               self.device, ranges_str,
               self._HashZeroBlocks(self.tgt.extended.size())))
       script.Print(" ")
-      script.Print('Verified aosPB %s partition.' % (partition,))
+      script.Print('Verified tpp %s partition.' % (partition,))
       if partition == "system":
         code = ErrorCode.SYSTEM_NONZERO_CONTENTS
       else:
@@ -3612,7 +3612,7 @@ class BlockDifference(object):
           'endif;' % (code, partition))
     else:
       script.Print(" ")
-      script.Print('Verified aosPB %s files.' % (partition,))
+      script.Print('Verified tpp %s files.' % (partition,))
 
     if partition == "system":
       code = ErrorCode.SYSTEM_UNEXPECTED_CONTENTS
